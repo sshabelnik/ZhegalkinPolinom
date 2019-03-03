@@ -1,5 +1,7 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -12,11 +14,13 @@ namespace ConsoleApplication17
             ZhegalkinPolinom zh = new ZhegalkinPolinom("x1x2x3+1+x2x3");
             zh.Insert(new Konj(12));
             zh.SortByLength();
+            var temp = zh.PolinomWith(1);
             Console.WriteLine(zh.Polinom[0].Info);
             Console.WriteLine(zh.Polinom[1].Info);
             Console.WriteLine(zh.Polinom[2].Info);
             Console.WriteLine(zh.Polinom[3].Info);
             Console.WriteLine(zh.ToString());
+            Console.WriteLine(temp.ToString());
         }
     }
     
@@ -69,14 +73,11 @@ namespace ConsoleApplication17
                     else
                         result += "x" + z;
                 }
-                if (temp.Length > counter)
-                {
-                    result += "+";
-                    counter++;
-                }
+
+                result += "+";
             }
             if (result != null)
-                return result;
+                return result.TrimEnd('+');
             throw new Exception("Полином Жегалкина пуст");
         }
 
@@ -93,6 +94,21 @@ namespace ConsoleApplication17
         public void SortByLength()
         {
             Polinom = (from j in Polinom orderby j.Info descending select j).ToList();
+        }
+
+        public ZhegalkinPolinom PolinomWith(int i)
+        {
+            string find = i.ToString();
+            string result = null;
+            foreach (var j in Polinom)
+            {
+                var temp = j.Info.ToString();
+                if (temp.Contains(find))
+                {
+                    result += temp + "+";
+                }
+            }
+            return new ZhegalkinPolinom(result.TrimEnd('+'));
         }
     }
 
