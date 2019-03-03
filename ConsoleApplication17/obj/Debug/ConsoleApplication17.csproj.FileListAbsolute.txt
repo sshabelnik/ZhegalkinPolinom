@@ -1,0 +1,6 @@
+/Users/honning69/RiderProjects/ConsoleApplication17/ConsoleApplication17/obj/Debug/ConsoleApplication17.csprojAssemblyReference.cache
+/Users/honning69/RiderProjects/ConsoleApplication17/ConsoleApplication17/obj/Debug/ConsoleApplication17.csproj.CoreCompileInputs.cache
+/Users/honning69/RiderProjects/ConsoleApplication17/ConsoleApplication17/bin/Debug/ConsoleApplication17.exe
+/Users/honning69/RiderProjects/ConsoleApplication17/ConsoleApplication17/bin/Debug/ConsoleApplication17.pdb
+/Users/honning69/RiderProjects/ConsoleApplication17/ConsoleApplication17/obj/Debug/ConsoleApplication17.exe
+/Users/honning69/RiderProjects/ConsoleApplication17/ConsoleApplication17/obj/Debug/ConsoleApplication17.pdb
